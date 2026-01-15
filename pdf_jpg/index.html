@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конвертер</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard-polyfill/2.8.6/clipboard-polyfill.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo" id="BackMain">Конвертер</div>
+        <nav class="nav-links">
+            <button class="nav-btn" id="btnHelp">Помощь</button>
+            <button class="nav-btn" id="btnContact">Контакты</button>
+            <button class="nav-btn btn-primary" id="btnOffer">Предложения</button>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="tool-card converter-box">
+            <button class="btn-back" onclick="window.location.replace('/index.html')">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Назад
+            </button>
+            <div class="card-icon-wrap">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#e53935" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <path d="M12 18l3-3-3-3"></path>
+                    <path d="M9 15h6"></path>
+                </svg>
+            </div>
+            
+            <h3>Конвертировать PDF в JPG</h3>
+            <p>Выберите PDF-файл для извлечения страниц в виде изображений</p>
+
+            <div class="upload-area" id="dropZone">
+                <input type="file" id="fileInput" accept="application/pdf" hidden>
+                <div class="upload-content">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#777" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <span>Перетащите файл сюда или <b style="color: #e53935;">выберите на диске</b></span>
+                </div>
+                <div id="fileName" class="file-info" style="display: none;"></div>
+            </div>
+
+            <button class="btn-primary" id="btnConvert" style="width: 100%; margin-top: 20px; border: none; cursor: pointer; display: none;">
+                Преобразовать в JPG
+            </button>
+            <div id="resultsContainer" class="results-grid"></div>
+            <button id="btnDownloadZip" class="btn-primary" style="width: 100%; margin-top: 10px; background-color: #333; display: none;">
+                Скачать все страницы (ZIP)
+            </button>
+        </div>
+    </main>
+    <script src="/HelpScript/Message.js"></script>
+    <script src="/HelpScript/Headers.js"></script>
+    <script src="pdf_jpg.js"></script>
+</body>
+</html>

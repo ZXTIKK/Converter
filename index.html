@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конвертер</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">Конвертер</div>
+        <nav class="nav-links">
+            <button class="nav-btn" id="btnHelp">Помощь</button>
+            <button class="nav-btn" id="btnContact">Контакты</button>
+            <button class="nav-btn btn-primary" id="btnOffer">Предложения</button>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="tools-grid">
+
+            <div class="tool-card" id="PDF-JPG">
+                <div class="card-icon-wrap">
+                    <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#e53935" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><circle cx="10" cy="13" r="2"></circle><path d="m20 17-1.09-1.09a2 2 0 0 0-2.82 0L10 22"></path></svg>
+                </div>
+                <h3>PDF в JPG</h3>
+                <p>Извлекайте все изображения из PDF или сохраняйте каждую страницу в JPG.</p>
+            </div>
+
+            <div class="tool-card" id="Picture">
+                <div class="card-icon-wrap">
+                    <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#4caf50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                </div>
+                <h3>Преобразование картинок</h3>
+                <p>Преобразуйте разные форматы картинок в другие (PNG, JPG, WEBP).</p>
+            </div>
+
+            <div class="tool-card" id="PDF-unite">
+                <div class="card-icon-wrap">
+                    <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#e53935" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M9 15h6"></path><path d="M12 12v6"></path></svg>
+                </div>
+                <h3>Объединить PDF</h3>
+                <p>Объединяйте PDF файлы и упорядочивайте их легко и быстро.</p>
+            </div>
+
+            <div class="tool-card" id="PDF-split">
+                <div class="card-icon-wrap">
+                    <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#e53935" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><line x1="8" y1="15" x2="16" y2="15"></line></svg>
+                </div>
+                <h3>Разделить PDF</h3>
+                <p>Выбирайте диапазон страниц или преобразовывайте каждую страницу в отдельный файл.</p>
+            </div>
+
+            <div class="tool-card" id="PDF-WORD">
+                <div class="card-icon-wrap">
+                    <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#2b579a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M9 15h6"></path><path d="M9 11h6"></path><path d="M9 19h6"></path></svg>
+                </div>
+                <h3>PDF в WORD</h3>
+                <p>Преобразование PDF в редактируемый формат WORD.</p>
+            </div>
+
+            <div class="tool-card" id="WORD-PDF">
+                <div class="card-icon-wrap">
+                    <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#2b579a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7"></path><path d="M21 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2"></path><path d="M21 7H3"></path><path d="M16 12l-4-4-4 4"></path><path d="M12 8v9"></path></svg>
+                </div>
+                <h3>WORD в PDF</h3>
+                <p>Надежное преобразование ваших документов WORD в PDF.</p>
+            </div>
+
+            <div class="tool-card" id="PDF-PP">
+                <div class="card-icon-wrap">
+                    <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#d24726" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H4z"></path><path d="M9 20h6"></path><path d="M12 16v4"></path><path d="M8 8h8"></path></svg>
+                </div>
+                <h3>PDF в PowerPoint</h3>
+                <p>Превратите ваши PDF файлы в красивые презентации PowerPoint.</p>
+            </div>
+            
+            <div class="tool-card soon" id="commingSoon">
+                <div class="card-icon-wrap">
+                    <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#fbc02d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <h3>Скоро...</h3>
+                <p>Предлагайте новый функционал по кнопке предложить. Или нажми сюда!</p>
+            </div>
+
+        </div>
+    </main>
+    <script src="HelpScript/Message.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
