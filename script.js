@@ -106,11 +106,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function directOnComingSoon(){
-        window.location.replace("/ComingSoon.html");
+        window.location.href = "ComingSoon.html";
     }
     
     function directOnPage(dir){
-        window.location.replace(`${dir}/index.html`);
+        window.location.href = `${dir}/index.html`;
     }
 });
 

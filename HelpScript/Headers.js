@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         offerBTN.addEventListener("click",async function(){commingSoonOffer();});
         helpBTN.addEventListener("click",async function(){getHelp();});
         contactBTN.addEventListener("click",async function(){getContacts();});
-        backBTN.addEventListener("click",function(){window.location.replace("/index.html")});
+        backBTN.addEventListener("click",function(){window.history.back();});
     }
 
     async function commingSoonOffer() {
