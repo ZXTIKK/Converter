@@ -28,16 +28,22 @@ std::string getGitHash(const std::string& command) {
 }
 
 int main() {
-    std::cout << "Checking for updates..." << std::endl;
+    std::cout << "Проверка обновлений..." << std::endl;
     std::system(("git fetch" DEV_NULL));
 
     std::string local = getGitHash("git rev-parse HEAD");
     std::string remote = getGitHash("git rev-parse @{u}");
 
     if (local == remote) {
-        std::cout << "Up to date!" << std::endl;
+        std::cout << "Установлена самая новая версия!" << std::endl;
     } else {
-        std::cout << "New version available on GitHub!" << std::endl;
+        std::cout << "⚠️ Доступно обновление! Хотите скачать? (y/n): ";
+        char choice;
+        std::cin >> choice;
+        if (choice == 'y' || choice == 'Y') {
+            std::system("git pull");
+            std::cout << "✅ Приложение обновлено." << std::endl;
+        }
     }
 
     return 0;
