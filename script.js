@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             directOnPage("pdf_jpg");
         });
         picture.addEventListener("click",function(){
-            directOnPage("picture");
+            directOnPage("Pictures");
         });
         pdf_unite.addEventListener("click",function(){
             directOnComingSoon();

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Конвертер изображений</h1>
+    
+    <div class="drop-zone" id="dropZone">
+        <p>Перетащите файл сюда или <br><strong>выберите на диске</strong></p>
+        <input type="file" id="fileInput" accept="image/*" hidden>
+    </div>
+
+    <img id="preview" src="" alt="Предпросмотр">
+
+    <div class="controls" id="controls">
+        <div class="select-wrapper">
+            <label for="formatSelect">Выберите формат:</label>
+            <select id="formatSelect">
+                <option value="image/png">PNG</option>
+                <option value="image/jpeg">JPEG</option>
+                <option value="image/webp">WebP</option>
+            </select>
+        </div>
+        <button id="convertBtn">Скачать результат</button>
+    </div>
+</div>
+
+<script>
+    const dropZone = document.getElementById('dropZone');
+    const fileInput = document.getElementById('fileInput');
+    const preview = document.getElementById('preview');
+    const controls = document.getElementById('controls');
+    const convertBtn = document.getElementById('convertBtn');
+    const formatSelect = document.getElementById('formatSelect');
+
+    let originalImage = new Image();
+
+    dropZone.onclick = () => fileInput.click();
+    fileInput.onchange = (e) => handleFile(e.target.files[0]);
+
+    function handleFile(file) {
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            originalImage.src = event.target.result;
+            originalImage.onload = () => {
+                preview.src = event.target.result;
+                preview.style.display = 'block';
+                controls.style.display = 'block';
+            };
+        };
+        reader.readAsDataURL(file);
+    }
+
+    convertBtn.onclick = () => {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = originalImage.width;
+        canvas.height = originalImage.height;
+        ctx.drawImage(originalImage, 0, 0);
+        
+        const format = formatSelect.value;
+        const ext = format.split('/')[1];
+        const link = document.createElement('a');
+        link.download = `converted.${ext}`;
+        link.href = canvas.toDataURL(format, 0.9);
+        link.click();
+    };
+
+    dropZone.ondragover = (e) => { e.preventDefault(); dropZone.classList.add('active'); };
+    dropZone.ondragleave = () => { dropZone.classList.remove('active'); };
+    dropZone.ondrop = (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('active');
+        handleFile(e.dataTransfer.files[0]);
+    };
+</script>
+
+</body>
+</html>
